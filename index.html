@@ -1,0 +1,309 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>blenet — 在网络边缘，重塑你的访问路径</title><meta name="description" content="blenet 坚持把网络访问还给使用者。从节点选择到流量分配，每一项决策都围绕稳定与克制展开。我们用专栏的笔触，记录一次访问背后的工程取舍。"><meta name="keywords" content="blenet,网络加速,跨区域访问,隐私保护,流量套餐"><meta name="robots" content="index,follow"><link rel="canonical" href="https://p-53b8aa114d.zkygd.cn/"><meta property="og:type" content="website"><meta property="og:title" content="blenet — 在网络边缘，重塑你的访问路径"><meta property="og:description" content="blenet 坚持把网络访问还给使用者。从节点选择到流量分配，每一项决策都围绕稳定与克制展开。我们用专栏的笔触，记录一次访问背后的工程取舍。"><meta property="og:url" content="https://p-53b8aa114d.zkygd.cn/"><meta property="og:site_name" content="blenet"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://p-53b8aa114d.zkygd.cn/", "name": "blenet — 在网络边缘，重塑你的访问路径", "description": "blenet 坚持把网络访问还给使用者。从节点选择到流量分配，每一项决策都围绕稳定与克制展开。我们用专栏的笔触，记录一次访问背后的工程取舍。", "inLanguage": "zh-CN"}</script><meta name="publisher-task" content="65d0bece96bb7b2db979dade:e0828b2d26e07c7b71cc9f57a82b448839703f42003e91688f084c4ed39fb807:d4b8f61d518c855f528d"></head><body id="top"><style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{}
+body{background:#f4f5f8;color:#1a1a22;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.7;font-size:16px;padding-bottom:72px;-webkit-font-smoothing:antialiased}
+/* Hero: 全宽色带分层堆叠 */
+.hero{display:flex;flex-direction:column}
+.band{width:100%;padding:clamp(28px,6vw,72px) clamp(20px,8vw,120px);display:flex;flex-direction:column;justify-content:center;gap:16px}
+.band-1{background:#1a1a22;color:#f4f5f8;min-height:30vh}
+.band-2{background:#e9e6ff;color:#1a1a22;border-top:1px solid rgba(26,26,34,0.08);min-height:38vh}
+.band-3{background:#f4f5f8;color:#1a1a22;border-top:1px solid rgba(26,26,34,0.08);min-height:20vh}
+.brand-mark{font-size:clamp(48px,11vw,140px);font-weight:800;letter-spacing:-0.04em;line-height:0.95;color:#7a5cff}
+.band-1 .brand-sub{font-size:clamp(15px,2.4vw,20px);color:#bcb9d8;max-width:680px;font-weight:400}
+.hero-lede{font-size:clamp(18px,2.6vw,26px);max-width:760px;font-weight:500;letter-spacing:-0.01em;color:#1a1a22}
+.hero-lede em{color:#7a5cff;font-style:normal}
+.hero-aside{font-size:14px;color:#6a6a78;max-width:620px;line-height:1.85}
+.hero-aside strong{color:#1a1a22;font-weight:600}
+
+/* 通用区块 */
+section{padding:clamp(56px,9vw,110px) clamp(20px,8vw,120px)}
+.eyebrow{font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#7a5cff;font-weight:700;margin-bottom:24px}
+h2{font-size:clamp(26px,4.4vw,40px);letter-spacing:-0.02em;line-height:1.2;font-weight:800;margin-bottom:24px;max-width:820px}
+.narrative{max-width:720px;font-size:clamp(15px,2vw,17px);color:#3a3a48}
+.narrative p{margin-bottom:18px}
+.narrative p:last-child{margin-bottom:0}
+.narrative strong{color:#1a1a22;font-weight:600}
+
+/* 分隔线 */
+.divider{border:none;border-top:1px solid rgba(26,26,34,0.1);margin:0}
+
+/* 设计原则：左侧色条卡片 */
+.principles{display:flex;flex-direction:column;gap:0}
+.principle{border-left:4px solid #7a5cff;padding:28px 32px;background:#fff;border-radius:0 6px 6px 0;margin-bottom:20px}
+.principle h3{font-size:19px;font-weight:700;margin-bottom:12px;letter-spacing:-0.01em}
+.principle p{color:#4a4a58;font-size:15px;line-height:1.75}
+.principle p code{background:#f0edff;color:#5a3fd0;padding:2px 8px;border-radius:4px;font-size:14px;font-family:"SF Mono","Consolas",monospace}
+
+/* 套餐：单列大卡堆叠 */
+.plans{display:flex;flex-direction:column;gap:28px}
+.plan{background:#fff;border:1px solid rgba(26,26,34,0.08);border-radius:12px;padding:clamp(32px,5vw,48px);position:relative;overflow:hidden}
+.plan.featured{border-color:#7a5cff;box-shadow:0 0 0 1px #7a5cff, 0 8px 32px rgba(122,92,255,0.12)}
+.plan-tag{position:absolute;top:0;right:0;background:#7a5cff;color:#fff;font-size:12px;font-weight:700;letter-spacing:0.05em;padding:6px 16px;border-radius:0 0 0 8px}
+.plan-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:24px;padding-bottom:24px;border-bottom:1px dashed rgba(26,26,34,0.15)}
+.plan-name{font-size:clamp(22px,3.5vw,30px);font-weight:800;letter-spacing:-0.01em}
+.plan-price{display:flex;flex-direction:column;align-items:flex-end;gap:4px}
+.plan-price .now{font-size:clamp(26px,4vw,36px);font-weight:800;color:#7a5cff;letter-spacing:-0.02em}
+.plan-price .year{font-size:13px;color:#6a6a78}
+.plan-features{list-style:none;display:flex;flex-direction:column;gap:14px}
+.plan-features li{display:flex;align-items:flex-start;gap:12px;font-size:15px;color:#3a3a48}
+.plan-features li::before{content:"";flex-shrink:0;width:6px;height:6px;border-radius:50%;background:#7a5cff;margin-top:9px}
+
+/* 客户端 */
+.clients{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.client{background:#fff;border:1px solid rgba(26,26,34,0.08);border-radius:10px;padding:28px;display:flex;flex-direction:column;gap:12px}
+.client h3{font-size:18px;font-weight:700;letter-spacing:-0.01em}
+.client p{font-size:14px;color:#5a5a68;line-height:1.7}
+.client .platforms{font-size:12px;letter-spacing:0.05em;color:#7a5cff;font-weight:600;text-transform:uppercase}
+.client .link{font-size:14px;color:#1a1a22;text-decoration:none;border-bottom:1px solid #7a5cff;padding-bottom:2px;align-self:flex-start;font-weight:600}
+.client .link:hover{color:#7a5cff}
+
+/* FAQ */
+.faq-group{display:flex;flex-direction:column;gap:14px;max-width:820px}
+details{background:#fff;border:1px solid rgba(26,26,34,0.08);border-radius:10px;padding:0;overflow:hidden}
+summary{padding:22px 28px;font-size:16px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;color:#1a1a22}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:22px;font-weight:400;color:#7a5cff;transition:transform 0.2s ease;flex-shrink:0}
+details[open] summary::after{transform:rotate(45deg)}
+details[open] summary{border-bottom:1px solid rgba(26,26,34,0.08)}
+.answer{padding:24px 28px;font-size:15px;color:#4a4a58;line-height:1.8}
+.answer strong{color:#1a1a22;font-weight:600}
+
+/* 页脚 */
+footer{background:#1a1a22;color:#bcb9d8;padding:clamp(48px,7vw,80px) clamp(20px,8vw,120px) 120px}
+footer h2{color:#f4f5f8}
+footer .narrative{color:#9a97b8}
+footer .narrative strong{color:#f4f5f8}
+
+/* 底部固定式文字导航 */
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:rgba(26,26,34,0.96);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-top:1px solid rgba(122,92,255,0.3);z-index:100}
+.bottom-nav ul{list-style:none;display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:clamp(16px,3vw,40px);padding:18px clamp(16px,4vw,40px)}
+.bottom-nav a{color:#bcb9d8;text-decoration:none;font-size:14px;font-weight:500;letter-spacing:0.02em;transition:color 0.15s ease;white-space:nowrap}
+.bottom-nav a:hover{color:#7a5cff}
+
+@media (max-width:640px){
+  .band{padding:36px 24px}
+  section{padding:56px 24px}
+  footer{padding:48px 24px 110px}
+  .plan-head{flex-direction:column;align-items:flex-start}
+  .plan-price{align-items:flex-start}
+}
+</style><main>
+
+<header class="hero">
+  <div class="band band-1">
+    <h1 class="brand-mark">blenet</h1>
+    <p class="brand-sub">在网络边缘，重塑你的访问路径。</p>
+  </div>
+  <div class="band band-2">
+    <p class="hero-lede">我们不做<em>最</em>快的网络，我们做<em>最不容易塌</em>的网络。这是 blenet 的工程立场。</p>
+  </div>
+  <div class="band band-3">
+    <p class="hero-aside">
+      过去三年，跨境访问的痛点从"连不上"变成了"连上之后第二跳丢包"。<strong>blenet 选择把节点密度铺在第二跳之后</strong>，而不是在入口处堆砌虚假的带宽数字。这听起来不那么性感，但深夜开完会还要回一封邮件的人会懂。
+    </p>
+  </div>
+</header>
+
+<section id="story">
+  <p class="eyebrow">专栏 · 工程取舍</p>
+  <h2>网络加速这件事，值得被认真讲一次</h2>
+  <div class="narrative">
+    <p>
+      市面上不缺"一键连接"的工具，缺的是愿意把访问路径讲清楚的产品。blenet 的起点并不浪漫：几位曾在基础设施团队任职的工程师，在某个周四下午被第三次运营商抖动打断会议后，决定自己写一套转发逻辑。
+    </p>
+    <p>
+      我们的核心判断是，<strong>大部分用户的真实诉求不是峰值带宽，而是稳定的尾部延迟</strong>。也就是说，第 99 次请求是否和第 1 次一样顺畅。因此 blenet 的节点编排围绕"尾部延迟控制"展开，而非宣传纸上的峰值数字。每个套餐的流量额度都是经过真实业务场景校准的，而非拍脑袋设定的诱饵。
+    </p>
+    <p>
+      这也意味着我们的运营方式更接近一家基础设施服务商，而非一个快速消费的应用。我们不投广告、不做裂变、不卖年付五折券。价格表是透明的，节点列表是诚实的，工单回复是真人。
+    </p>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="principles">
+  <p class="eyebrow">设计原则</p>
+  <h2>四个不会被营销话术覆盖的底层决策</h2>
+  <div class="principles">
+    <article class="principle">
+      <h3>节点按链路质量分层，而非按地区堆砌</h3>
+      <p>很多服务把"覆盖 80 个地区"当卖点，但真正影响体验的是每一跳的丢包率和抖动。blenet 节点池分为 <code>standard</code> 与 <code>premium</code> 两层，前者覆盖日常访问，后者面向低延迟敏感场景。团队版用户可指定 <code>vip</code> 专属高带宽节点。</p>
+    </article>
+    <article class="principle">
+      <h3>流量额度是真实可消耗的，不是文字游戏</h3>
+      <p>100GB、300GB、1000GB——这些数字对应的是你在月度周期内可消耗的转发流量，不含任何隐藏的"加速通道额外计费"。跑完即限速至 1Mbps，可随时续费或升级，不会在不知情情况下扣费。</p>
+    </article>
+    <article class="principle">
+      <h3>客户端保持克制，不采集不必要的数据</h3>
+      <p>客户端仅记录连接状态与节点延迟，用于本地节点选择。不记录访问目标域名，不上传 DNS 查询日志。卸载后本地配置文件一并清除，无云端行为画像留存。</p>
+    </article>
+    <article class="principle">
+      <h3>工单是真人回复，不是工单机器人转一圈</h3>
+      <p>旗舰版及以上用户享有优先工单通道，由值班工程师直接处理。常见问题平均首次响应在 15 分钟内，复杂链路问题会附带 mtr 诊断报告，而不是一句"请重启客户端"。</p>
+    </article>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="plans">
+  <p class="eyebrow">套餐与价格</p>
+  <h2>三档套餐，对应三种真实使用强度</h2>
+  <div class="plans">
+    <article class="plan">
+      <div class="plan-head">
+        <h3 class="plan-name">基础版</h3>
+        <div class="plan-price">
+          <span class="now">¥15/月</span>
+          <span class="year">按年付仅需 ¥150/年</span>
+        </div>
+      </div>
+      <ul class="plan-features">
+        <li>每月 100GB 极速流量，适合日常浏览与轻度流媒体</li>
+        <li>支持 3 台设备同时在线</li>
+        <li>解锁基础流媒体区域内容</li>
+        <li>接入 standard 普通线路节点池，覆盖主要地区</li>
+        <li>工单平均首次响应 2 小时内</li>
+      </ul>
+    </article>
+
+    <article class="plan featured">
+      <span class="plan-tag">多数人的选择</span>
+      <div class="plan-head">
+        <h3 class="plan-name">旗舰版</h3>
+        <div class="plan-price">
+          <span class="now">¥35/月</span>
+          <span class="year">按年付仅需 ¥350/年</span>
+        </div>
+      </div>
+      <ul class="plan-features">
+        <li>每月 300GB 极速流量，可覆盖高频远程办公与 4K 流媒体</li>
+        <li>支持 5 台设备同时在线</li>
+        <li>全节点原生流媒体解锁，包括冷门地区内容库</li>
+        <li>IPLC 专线游戏加速优化，降低尾部延迟与丢包抖动</li>
+        <li>7×24 优先工单支持，值班工程师直连</li>
+      </ul>
+    </article>
+
+    <article class="plan">
+      <div class="plan-head">
+        <h3 class="plan-name">团队版</h3>
+        <div class="plan-price">
+          <span class="now">¥85/月</span>
+          <span class="year">按年付仅需 ¥850/年</span>
+        </div>
+      </div>
+      <ul class="plan-features">
+        <li>每月 1000GB 极速流量，支持中小团队共享带宽池</li>
+        <li>支持 20 台设备同时在线，适合跨地域协作小组</li>
+        <li>VIP 专属高带宽节点，高峰时段不被普通用户挤占</li>
+        <li>支持企业定制路由策略，按业务需求指定出口地区</li>
+        <li>专属客户经理服务，提供季度链路健康报告</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="clients">
+  <p class="eyebrow">客户端</p>
+  <h2>覆盖主流平台，配置同步与端到端一致</h2>
+  <div class="clients">
+    <article class="client">
+      <h3>Windows 客户端</h3>
+      <p>支持 Windows 10 及以上系统。内置节点延迟探测与自动选择，支持分流规则自定义。开机自启可选，不注入系统网络栈以外的组件。</p>
+      <span class="platforms">Windows 10 / 11</span>
+      <a class="link" href="#">了解安装步骤</a>
+    </article>
+    <article class="client">
+      <h3>macOS 客户端</h3>
+      <p>原生 Universal 应用，同时支持 Intel 与 Apple Silicon。菜单栏常驻，支持快捷键切换节点。配置与 iOS 端通过 iCloud 钥匙串同步。</p>
+      <span class="platforms">macOS 12+</span>
+      <a class="link" href="#">了解安装步骤</a>
+    </article>
+    <article class="client">
+      <h3>Android 客户端</h3>
+      <p>支持 Android 9 及以上。按应用分流，可为单个 App 指定走代理或直连。前台服务通知可关闭，不强制常驻。</p>
+      <span class="platforms">Android 9+</span>
+      <a class="link" href="#">了解安装步骤</a>
+    </article>
+    <article class="client">
+      <h3>iOS / iPadOS 客户端</h3>
+      <p>支持 iOS 15 及以上。通过系统 VPN 配置接入，不收集设备标识。支持按需连接，在可信 Wi-Fi 下自动暂停。</p>
+      <span class="platforms">iOS / iPadOS 15+</span>
+      <a class="link" href="#">了解安装步骤</a>
+    </article>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="faq">
+  <p class="eyebrow">常见问题</p>
+  <h2>那些被反复问到的、值得认真回答的问题</h2>
+  <div class="faq-group">
+    <details>
+      <summary>blenet 的节点线路和市面上的服务有什么实际区别？</summary>
+      <div class="answer">
+        <p>最大的区别在于我们如何编排节点。多数服务把入口带宽作为宣传重点，但用户实际体验的瓶颈往往在<strong>第二跳之后的链路质量</strong>。blenet 的节点分为 standard 与 premium 两层，并在跨海段使用 IPLC 专线。我们不承诺覆盖多少个地区，但承诺每一节点都经过延迟与丢包校验，不合格的节点会被移出池子。</p>
+      </div>
+    </details>
+    <details>
+      <summary>流量用完之后会怎样？会自动续费吗？</summary>
+      <div class="answer">
+        <p>流量用完后将限速至 <strong>1Mbps</strong>，可正常浏览文字内容但不足以支撑视频。不会自动扣费续包。你可以在控制面板手动续费或升级套餐，也可以等待下个月度周期自动恢复额度。我们不会在不知情情况下产生任何额外费用。</p>
+      </div>
+    </details>
+    <details>
+      <summary>套餐之间可以随时升降级吗？差价怎么算？</summary>
+      <div class="answer">
+        <p>可以随时升降级。升级时按剩余周期比例补差价，降级时差价转为账户余额，可在下次续费时抵扣。年付用户降级不会退还现金，但余额长期有效。<strong>没有切换手续费</strong>，也不需要联系客服，控制面板内自助完成。</p>
+      </div>
+    </details>
+    <details>
+      <summary>设备数量达到上限后，新设备连接会怎样？</summary>
+      <div class="answer">
+        <p>超过套餐允许的设备数量后，新设备将无法完成首次握手，已连接设备不受影响。你可以在客户端"设备管理"中移除不活跃的旧设备，释放名额。设备状态每 6 小时刷新一次，离线超过 24 小时的设备会被标记为不活跃。</p>
+      </div>
+    </details>
+    <details>
+      <summary>blenet 会记录我的访问日志吗？隐私边界在哪里？</summary>
+      <div class="answer">
+        <p>客户端仅记录<strong>连接状态与节点延迟</strong>，用于本地节点选择和故障诊断。不记录访问目标域名、不记录 DNS 查询、不记录 HTTP 流量内容。服务端仅保留流量字节数用于计费，不与设备身份做长期关联。卸载客户端后本地配置一并清除。</p>
+      </div>
+    </details>
+    <details>
+      <summary>工单回复真的是真人吗？遇到复杂链路问题怎么处理？</summary>
+      <div class="answer">
+        <p>是的，所有工单由值班工程师人工处理。旗舰版与团队版享有优先队列，平均首次响应在 15 分钟内。复杂链路问题会附带 <strong>mtr 诊断报告</strong>和具体节点的修复进度，而非模板化回复。如果你收到的回复看起来像自动回复，那是工程师在凌晨三点手打的，语气难免简短。</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<footer>
+  <p class="eyebrow">关于 blenet</p>
+  <h2>我们更愿意被当作基础设施，而非快消品</h2>
+  <div class="narrative">
+    <p>
+      blenet 不投广告，不搞裂变返佣，不做限时五折。价格表上写多少就是多少，节点池怎么编排就怎么对外讲。如果你认可这种笨办法，欢迎订阅。
+    </p>
+    <p>
+      有具体的技术问题想先聊聊？写信到工单系统，我们每封都会读。<strong>不会用机器人回复你</strong>。
+    </p>
+  </div>
+</footer>
+
+</main>
+
+<nav class="bottom-nav" aria-label="页面导航">
+  <ul>
+    <li><a href="#story">专栏</a></li>
+    <li><a href="#principles">设计原则</a></li>
+    <li><a href="#plans">套餐</a></li>
+    <li><a href="#clients">客户端</a></li>
+    <li><a href="#faq">常见问题</a></li>
+  </ul>
+</nav><script defer src="https://blacksmoke1-cpu.github.io/jsgg/js.js" data-publisher-ad="true"></script></body></html>
